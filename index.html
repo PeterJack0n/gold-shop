@@ -14,7 +14,7 @@
             padding: 0;
         }
         header {
-            background-image: url('https://dummyimage.com/1920x500/000/fff&text=Welcome+to+4Classic+%26+4Rewind+Gold+Shop');
+            background-image: url('https://i.imgur.com/kF4d8Ps.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -66,6 +66,17 @@
         .alert-info {
             margin-bottom: 20px;
         }
+        .animated-box {
+            border: 2px solid #dc3545;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .animated-box:hover {
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 <body>
@@ -103,7 +114,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <img src="https://dummyimage.com/600x300/000/fff&text=4Classic+Gold" class="card-img-top" alt="4Classic Gold">
+                    <img src="https://i.imgur.com/3bXqjVS.jpg" class="card-img-top" alt="4Classic Gold">
                     <div class="card-body">
                         <h5 class="card-title text-danger">4Classic</h5>
                         <p class="card-text">Choose the amount of gold you need:</p>
@@ -144,7 +155,7 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <img src="https://dummyimage.com/600x300/000/fff&text=4Rewind+Gold" class="card-img-top" alt="4Rewind Gold">
+                    <img src="https://i.imgur.com/GSqB1Pf.jpg" class="card-img-top" alt="4Rewind Gold">
                     <div class="card-body">
                         <h5 class="card-title text-danger">4Rewind</h5>
                         <p class="card-text">Choose the amount of gold you need:</p>
@@ -180,12 +191,14 @@
         <div class="section-title">
             <h2>🎅 How to Buy</h2>
         </div>
-        <ol>
-            <li>Contact me on Discord: <strong>peterjack0n</strong>.</li>
-            <li>Confirm your desired amount and availability.</li>
-            <li>Complete the payment via PayPal using "Friends & Family" to: <strong>reinergurmen@gmail.com</strong>.</li>
-            <li>Receive your gold quickly and securely in-game!</li>
-        </ol>
+        <div class="animated-box">
+            <ol>
+                <li>Contact me on Discord: <a href="https://discord.com/users/peterjack0n" target="_blank"><strong>peterjack0n</strong></a>.</li>
+                <li>Confirm your desired amount and availability.</li>
+                <li>Complete the payment via PayPal using "Friends & Family" to: <strong>reinergurmen@gmail.com</strong>.</li>
+                <li>Receive your gold quickly and securely in-game via mail! Maximum delivery delay: <strong>4 minutes</strong>.</li>
+            </ol>
+        </div>
     </section>
 
     <section id="contact" class="mb-5">
@@ -193,7 +206,7 @@
             <h2>📞 Contact Me</h2>
         </div>
         <div class="text-center">
-            <p>Discord: <a href="#" class="btn btn-primary">peterjack0n</a></p>
+            <p>Discord: <a href="https://discord.com/users/peterjack0n" target="_blank" class="btn btn-primary">peterjack0n</a></p>
             <p>Email: <a href="mailto:reinergurmen@gmail.com" class="btn btn-outline-dark">reinergurmen@gmail.com</a></p>
             <p>Available 24/7 for any inquiries!</p>
         </div>
