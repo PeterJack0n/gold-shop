@@ -9,73 +9,108 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f9;
         }
+
         header {
-            background-image: url('https://i.imgur.com/kF4d8Ps.jpg');
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #212529;
+        }
+
+        nav .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        nav .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
             padding: 100px 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
-        header h1 {
-            font-size: 4rem;
-            font-weight: bold;
+
+        .hero h2 {
+            font-size: 2.5rem;
         }
-        header p {
-            font-size: 1.5rem;
-            margin-top: 10px;
+
+        .section {
+            padding: 60px 20px;
         }
+
         .section-title {
             text-align: center;
             margin-bottom: 40px;
         }
+
         .section-title h2 {
             font-size: 2.5rem;
-            color: #dc3545;
-            font-weight: bold;
+            color: #343a40;
         }
+
         .card {
-            border: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
+
         .card:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
-        .btn-paypal {
-            background-color: #FFC439;
-            color: black;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-        }
-        .btn-paypal:hover {
-            background-color: #E0A800;
-        }
+
         footer {
-            background-color: #343a40;
+            background-color: #212529;
             color: white;
-            padding: 20px 0;
             text-align: center;
-        }
-        .alert-info {
-            margin-bottom: 20px;
-        }
-        .animated-box {
-            border: 2px solid #dc3545;
-            border-radius: 10px;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
         }
-        .animated-box:hover {
-            transform: translateY(-10px);
+
+        .btn-primary {
+            background-color: #ffc107;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a800;
+        }
+
+        .pricing-table {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pricing-table .table {
+            margin: 0 auto;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -83,10 +118,10 @@
 
 <header>
     <h1>🎄 4Classic & 4Rewind Gold Shop 🎄</h1>
-    <p>Your trusted source for gold in 4Story servers</p>
+    <p>Your trusted source for 4Story Gold</p>
 </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="#">Gold Shop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,127 +129,78 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#prices">Prices & Stock</a></li>
-                <li class="nav-item"><a class="nav-link" href="#how-to-buy">How to Buy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container mt-5">
-    <div class="alert alert-info">
-        <strong>Note for Brave Browser users:</strong> Please disable shields or allow cookies to ensure PayPal buttons work correctly.
-    </div>
-
-    <section id="prices" class="mb-5">
-        <div class="section-title">
-            <h2>💰 Prices & Stock</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="https://i.imgur.com/3bXqjVS.jpg" class="card-img-top" alt="4Classic Gold">
-                    <div class="card-body">
-                        <h5 class="card-title text-danger">4Classic</h5>
-                        <p class="card-text">Choose the amount of gold you need:</p>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="reinergurmen@gmail.com">
-                            <input type="hidden" name="item_name" value="4Classic Gold">
-                            <input type="hidden" name="currency_code" value="EUR">
-                            <div class="mb-3">
-                                <label for="classic-quantity" class="form-label">Quantity:</label>
-                                <select id="classic-quantity" name="amount" class="form-select">
-                                    <option value="25">500g - €25</option>
-                                    <option value="50">1000g - €50</option>
-                                    <option value="75">1500g - €75</option>
-                                    <option value="100">2000g - €100</option>
-                                    <option value="125">2500g - €125</option>
-                                    <option value="150">3000g - €150</option>
-                                    <option value="175">3500g - €175</option>
-                                    <option value="200">4000g - €200</option>
-                                    <option value="225">4500g - €225</option>
-                                    <option value="250">5000g - €250</option>
-                                    <option value="275">5500g - €275</option>
-                                    <option value="300">6000g - €300</option>
-                                    <option value="325">6500g - €325</option>
-                                    <option value="350">7000g - €350</option>
-                                    <option value="375">7500g - €375</option>
-                                    <option value="400">8000g - €400</option>
-                                    <option value="425">8500g - €425</option>
-                                    <option value="450">9000g - €450</option>
-                                    <option value="475">9500g - €475</option>
-                                    <option value="500">10,000g - €500</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-paypal w-100">Pay with PayPal</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="https://i.imgur.com/GSqB1Pf.jpg" class="card-img-top" alt="4Rewind Gold">
-                    <div class="card-body">
-                        <h5 class="card-title text-danger">4Rewind</h5>
-                        <p class="card-text">Choose the amount of gold you need:</p>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <input type="hidden" name="business" value="reinergurmen@gmail.com">
-                            <input type="hidden" name="item_name" value="4Rewind Gold">
-                            <input type="hidden" name="currency_code" value="EUR">
-                            <div class="mb-3">
-                                <label for="rewind-quantity" class="form-label">Quantity:</label>
-                                <select id="rewind-quantity" name="amount" class="form-select">
-                                    <option value="50">100g - €50</option>
-                                    <option value="100">200g - €100</option>
-                                    <option value="150">300g - €150</option>
-                                    <option value="200">400g - €200</option>
-                                    <option value="250">500g - €250</option>
-                                    <option value="300">600g - €300</option>
-                                    <option value="350">700g - €350</option>
-                                    <option value="400">800g - €400</option>
-                                    <option value="450">900g - €450</option>
-                                    <option value="500">1000g - €500</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-paypal w-100">Pay with PayPal</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-to-buy" class="mb-5">
-        <div class="section-title">
-            <h2>🎅 How to Buy</h2>
-        </div>
-        <div class="animated-box">
-            <ol>
-                <li>Contact me on Discord: <a href="https://discord.com/users/peterjack0n" target="_blank"><strong>peterjack0n</strong></a>.</li>
-                <li>Confirm your desired amount and availability.</li>
-                <li>Complete the payment via PayPal using "Friends & Family" to: <strong>reinergurmen@gmail.com</strong>.</li>
-                <li>Receive your gold quickly and securely in-game via mail! Maximum delivery delay: <strong>4 minutes</strong>.</li>
-            </ol>
-        </div>
-    </section>
-
-    <section id="contact" class="mb-5">
-        <div class="section-title">
-            <h2>📞 Contact Me</h2>
-        </div>
-        <div class="text-center">
-            <p>Discord: <a href="https://discord.com/users/peterjack0n" target="_blank" class="btn btn-primary">peterjack0n</a></p>
-            <p>Email: <a href="mailto:reinergurmen@gmail.com" class="btn btn-outline-dark">reinergurmen@gmail.com</a></p>
-            <p>Available 24/7 for any inquiries!</p>
-        </div>
-    </section>
+<div class="hero">
+    <h2>Buy Gold Safely & Instantly</h2>
+    <p>4Classic & 4Rewind Gold Available Now</p>
+    <a href="#pricing" class="btn btn-primary btn-lg">View Prices</a>
 </div>
 
+<section id="pricing" class="section">
+    <div class="section-title">
+        <h2>💰 Pricing</h2>
+    </div>
+    <div class="pricing-table">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Gold Amount</th>
+                    <th>4Classic Price</th>
+                    <th>4Rewind Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>500g</td>
+                    <td>€25</td>
+                    <td>€50</td>
+                </tr>
+                <tr>
+                    <td>1000g</td>
+                    <td>€50</td>
+                    <td>€100</td>
+                </tr>
+                <tr>
+                    <td>1500g</td>
+                    <td>€75</td>
+                    <td>€150</td>
+                </tr>
+                <tr>
+                    <td>2000g</td>
+                    <td>€100</td>
+                    <td>€200</td>
+                </tr>
+                <tr>
+                    <td>2500g</td>
+                    <td>€125</td>
+                    <td>€250</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="section-title">
+        <h2>📞 Contact Us</h2>
+    </div>
+    <div class="contact-section">
+        <p><strong>Discord:</strong> <a href="https://discord.com/users/peterjack0n" target="_blank">peterjack0n</a></p>
+        <p><strong>Email:</strong> <a href="mailto:reinergurmen@gmail.com">reinergurmen@gmail.com</a></p>
+        <p>Delivery within 4 minutes after payment confirmation!</p>
+        <a href="#pricing" class="btn btn-primary">Buy Now</a>
+    </div>
+</section>
+
 <footer>
-    <p>&copy; 2024 Gold Shop. All rights reserved.</p>
+    <p>&copy; 2024 4Classic & 4Rewind Gold Shop. All rights reserved.</p>
 </footer>
 
 <!-- Bootstrap JS -->
