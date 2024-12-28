@@ -12,29 +12,34 @@
             background-color: #f8f9fa;
         }
         header {
-            background-image: url('https://via.placeholder.com/1500x400?text=🎄+4Story+Gold+Shop+🎄');
+            background-image: url('https://i.imgur.com/VUuJ6dv.jpg'); /* Reemplazar con imagen relevante */
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
+            font-weight: bold;
         }
         header p {
             font-size: 1.5em;
+            margin-top: 10px;
         }
         .pricing-table th {
             background-color: #ff3333;
             color: white;
         }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
         footer {
             background-color: #343a40;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
         }
         .btn-discord {
             background-color: #5865F2;
@@ -43,6 +48,14 @@
         }
         .btn-discord:hover {
             background-color: #404EED;
+        }
+        .btn-paypal {
+            background-color: #FFC439;
+            color: black;
+            font-weight: bold;
+        }
+        .btn-paypal:hover {
+            background-color: #E0A800;
         }
     </style>
 </head>
@@ -77,17 +90,21 @@
                 <div class="card mb-3">
                     <div class="card-header bg-danger text-white">4Classic</div>
                     <div class="card-body">
+                        <img src="https://i.imgur.com/fLToKXr.png" alt="4Classic Gold" class="img-fluid mb-3">
                         <p>Select your desired amount of gold:</p>
-                        <form id="classic-form">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="your-paypal-email@example.com">
+                            <input type="hidden" name="item_name" value="4Classic Gold">
                             <div class="mb-3">
                                 <label for="classic-quantity" class="form-label">Quantity:</label>
-                                <select id="classic-quantity" class="form-select">
+                                <select id="classic-quantity" name="amount" class="form-select">
                                     <option value="25">500g - €25</option>
                                     <option value="50">1000g - €50</option>
                                     <option value="75">1500g - €75</option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-danger w-100" onclick="processOrder('classic')">Buy Now</button>
+                            <button type="submit" class="btn btn-paypal w-100">Pay with PayPal</button>
                         </form>
                     </div>
                 </div>
@@ -96,19 +113,22 @@
                 <div class="card mb-3">
                     <div class="card-header bg-danger text-white">4Rewind</div>
                     <div class="card-body">
+                        <img src="https://i.imgur.com/TKLPD7N.png" alt="4Rewind Gold" class="img-fluid mb-3">
                         <p>Select your desired amount of gold:</p>
-                        <form id="rewind-form">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="your-paypal-email@example.com">
+                            <input type="hidden" name="item_name" value="4Rewind Gold">
                             <div class="mb-3">
                                 <label for="rewind-quantity" class="form-label">Quantity:</label>
-                                <select id="rewind-quantity" class="form-select">
+                                <select id="rewind-quantity" name="amount" class="form-select">
                                     <option value="50">100g - €50</option>
                                     <option value="100">200g - €100</option>
                                     <option value="150">300g - €150</option>
                                     <option value="200">400g - €200</option>
-                                    <option value="300">600g - €300</option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-danger w-100" onclick="processOrder('rewind')">Buy Now</button>
+                            <button type="submit" class="btn btn-paypal w-100">Pay with PayPal</button>
                         </form>
                     </div>
                 </div>
@@ -121,7 +141,7 @@
         <ol>
             <li>Contact me on Discord: <strong>peterjack0n</strong>.</li>
             <li>Confirm your desired amount and availability.</li>
-            <li>Send the payment directly via PayPal using "Friends & Family" to: <strong>peterjack0n@example.com</strong>.</li>
+            <li>Complete the payment via PayPal using "Friends & Family" to: <strong>your-paypal-email@example.com</strong>.</li>
             <li>Receive your gold quickly and securely in-game!</li>
         </ol>
     </section>
@@ -130,7 +150,7 @@
         <h2 class="text-center text-success">📞 Contact Me</h2>
         <div class="text-center">
             <p>Discord: <a href="#" class="btn btn-discord">peterjack0n</a></p>
-            <p>Email: <a href="mailto:peterjack0n@example.com" class="btn btn-outline-dark">peterjack0n@example.com</a></p>
+            <p>Email: <a href="mailto:your-email@example.com" class="btn btn-outline-dark">your-email@example.com</a></p>
             <p>Available 24/7 for any inquiries!</p>
         </div>
     </section>
@@ -139,14 +159,6 @@
 <footer>
     <p>&copy; 2024 Gold Shop. All rights reserved.</p>
 </footer>
-
-<script>
-    function processOrder(server) {
-        const quantity = document.getElementById(`${server}-quantity`).value;
-        const email = "peterjack0n@example.com";
-        alert(`Please send €${quantity} to ${email} via PayPal (Friends & Family)`);
-    }
-</script>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
