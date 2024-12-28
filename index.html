@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Classic & 4Rewind Gold Shop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-image: url('https://via.placeholder.com/1500x400?text=🎄+4Story+Gold+Shop+🎄');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 3em;
+        }
+        header p {
+            font-size: 1.5em;
+        }
+        .pricing-table th {
+            background-color: #ff3333;
+            color: white;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-discord:hover {
+            background-color: #404EED;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎄 4Classic & 4Rewind Gold Shop 🎄</h1>
+    <p>Trusted Seller | Verified by Elitepvpers | Safe & Fast Delivery</p>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Gold Shop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#prices">Prices & Stock</a></li>
+                <li class="nav-item"><a class="nav-link" href="#how-to-buy">How to Buy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <section id="prices" class="mb-5">
+        <h2 class="text-center text-danger">💰 Prices & Stock</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-danger text-white">4Classic</div>
+                    <div class="card-body">
+                        <p>Select your desired amount of gold:</p>
+                        <form id="classic-form">
+                            <div class="mb-3">
+                                <label for="classic-quantity" class="form-label">Quantity:</label>
+                                <select id="classic-quantity" class="form-select">
+                                    <option value="25">500g - €25</option>
+                                    <option value="50">1000g - €50</option>
+                                    <option value="75">1500g - €75</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-danger w-100" onclick="processOrder('classic')">Buy Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-danger text-white">4Rewind</div>
+                    <div class="card-body">
+                        <p>Select your desired amount of gold:</p>
+                        <form id="rewind-form">
+                            <div class="mb-3">
+                                <label for="rewind-quantity" class="form-label">Quantity:</label>
+                                <select id="rewind-quantity" class="form-select">
+                                    <option value="50">100g - €50</option>
+                                    <option value="100">200g - €100</option>
+                                    <option value="150">300g - €150</option>
+                                    <option value="200">400g - €200</option>
+                                    <option value="300">600g - €300</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-danger w-100" onclick="processOrder('rewind')">Buy Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-buy" class="mb-5">
+        <h2 class="text-center text-primary">🎅 How to Buy</h2>
+        <ol>
+            <li>Contact me on Discord: <strong>peterjack0n</strong>.</li>
+            <li>Confirm your desired amount and availability.</li>
+            <li>Send the payment directly via PayPal using "Friends & Family" to: <strong>peterjack0n@example.com</strong>.</li>
+            <li>Receive your gold quickly and securely in-game!</li>
+        </ol>
+    </section>
+
+    <section id="contact" class="mb-5">
+        <h2 class="text-center text-success">📞 Contact Me</h2>
+        <div class="text-center">
+            <p>Discord: <a href="#" class="btn btn-discord">peterjack0n</a></p>
+            <p>Email: <a href="mailto:peterjack0n@example.com" class="btn btn-outline-dark">peterjack0n@example.com</a></p>
+            <p>Available 24/7 for any inquiries!</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Gold Shop. All rights reserved.</p>
+</footer>
+
+<script>
+    function processOrder(server) {
+        const quantity = document.getElementById(`${server}-quantity`).value;
+        const email = "peterjack0n@example.com";
+        alert(`Please send €${quantity} to ${email} via PayPal (Friends & Family)`);
+    }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
